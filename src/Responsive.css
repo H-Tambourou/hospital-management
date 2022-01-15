@@ -1,0 +1,23 @@
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .links {
+    display: initial;
+    position: initial;
+    flex-direction: initial;
+    background-color: transparent;
+    height: initial;
+    top: initial;
+    width: initial;
+    border-radius: initial;
+    text-align: initial;
+    transition: initial;
+    box-shadow: initial;
+  }
+  .link {
+    margin: initial;
+    padding: 5px;
+    font-size: initial;
+  }
+}
