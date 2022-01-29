@@ -11,9 +11,11 @@
   "author": "Henrick Tambourou",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "mongoose": "^6.1.8"
+    "mongoose": "^6.1.8",
+    "mongoose-unique-validator": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
