@@ -5,7 +5,8 @@ const appointmentSchema = new mongoose.Schema({
     email: String,
     number: Number,
     date: Date,
-    visit: String,
+    status: Boolean,
+    createdBy: String
 })
 
 appointmentSchema.set('toJSON', {

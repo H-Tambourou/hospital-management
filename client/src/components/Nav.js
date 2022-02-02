@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logOut } from '../reducers/authorizationReducer';
 
 const Nav = function Nav() {
+  const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
+
+  const handleLogOut = () => {
+    dispatch(logOut());
+  };
 
   return (
     <nav className="nav">
@@ -63,6 +70,15 @@ const Nav = function Nav() {
           >
             Appointments
           </NavLink>
+          <div
+            className="link"
+            onClick={handleLogOut}
+            onKeyPress={handleLogOut}
+            role="button"
+            tabIndex={0}
+          >
+            Log Out
+          </div>
         </ul>
       </div>
     </nav>
