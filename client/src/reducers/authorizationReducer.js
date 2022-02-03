@@ -1,28 +1,31 @@
 import authService from '../services/auth';
 
-const initialState = {
-  loggedIn: false,
-  currentUser: {},
-};
+const auth = JSON.parse(window.localStorage.getItem('loggedUser'));
+const initialState = auth
+  ? { loggedIn: true, currentUser: auth }
+  : { loggedIn: false, currentUser: null };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'AUTHENTICATED': {
       return {
+        ...state,
         loggedIn: true,
         currentUser: action.payload,
       };
     }
     case 'RETRIEVE_AUTHENTICATION': {
       return {
+        ...state,
         loggedIn: true,
         currentUser: action.payload,
       };
     }
     case 'NOT_AUTHENTICATED': {
       return {
+        ...state,
         loggedIn: false,
-        currentUser: {},
+        currentUser: null,
       };
     }
     default:
@@ -56,13 +59,6 @@ export const logOut = () => async (dispatch) => {
   window.localStorage.removeItem('loggedUser');
   dispatch({
     type: 'NOT_AUTHENTICATED',
-  });
-};
-
-export const retrieveUser = (credentials) => async (dispatch) => {
-  dispatch({
-    type: 'RETRIEVE_AUTHENTICATION',
-    payload: credentials,
   });
 };
 

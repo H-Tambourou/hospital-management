@@ -8,7 +8,7 @@ const Card = function Card() {
         <img src={Icon1} alt="" />
       </div>
       <div className="cardInfo">
-        <p className="cardText">Appointment</p>
+        <p className="cardText">Appointments</p>
         <h1 style={{ color: '#336CFB' }}>200</h1>
       </div>
     </div>

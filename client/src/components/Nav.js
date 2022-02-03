@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { logOut } from '../reducers/authorizationReducer';
 
 const Nav = function Nav() {
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+
+  if (location.pathname === '/login' || location.pathname === '/signup') {
+    return null;
+  }
 
   const handleLogOut = () => {
     dispatch(logOut());
@@ -55,7 +60,7 @@ const Nav = function Nav() {
             style={({ isActive }) => ({ color: isActive ? '#336CFB' : '' })}
             to="checkings"
           >
-            Checkings
+            Checked in
           </NavLink>
           <NavLink
             className="link"
