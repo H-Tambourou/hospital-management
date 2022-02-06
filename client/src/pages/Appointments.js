@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import Feed from '../components/Feed';
 import { Button, Paper, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 // import AddCircleIcon from '@mui/icons-material/AddCircle';
 import img1 from '../assets/illustration2.png';
+import Form from '../components/Form';
 
 const Appointment = function Appointment() {
+  const [hideForm, setHideForm] = useState(true);
   const data = [
     {
       Name: 'Leslie Alexander',
@@ -62,8 +64,23 @@ const Appointment = function Appointment() {
     <div className="appointment section">
       <h1 style={{ padding: '2rem', textAlign: 'center' }}>Appointments</h1>
       <img src={img1} style={{ width: '100%' }} alt="" />
-      <div style={{display:'flex', justifyContent:'flex-start', margin:"10px", padding:"10px"}}>
-        <Button variant="contained"> Add an apppoint</Button>
+      <div style={{margin:"5px"}}>
+        {hideForm ? (
+          <Button
+            variant="contained"
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              margin: '10px',
+              padding: '10px',
+            }}
+            onClick={() => setHideForm(!hideForm)}
+          >
+            Add an apppointment
+          </Button>
+        ) : (
+          <Form setHideForm={setHideForm} hideForm={hideForm} />
+        )}
       </div>
       <Paper elevation={3} className="tableWrapper">
         <Table>

@@ -38,28 +38,28 @@ export const initializeAppointments = () => async (dispatch) => {
   });
 };
 
-// export const createAppointment = (content) => async (dispatch) => {
-//   const newAppoitment = await appointmentService.createNew(content);
-//   dispatch({
-//     type: 'NEW_APPOINTMENT',
-//     data: newAppoitment,
-//   });
-// };
+export const createAppointment = (content) => async (dispatch) => {
+  const newAppoitment = await appointmentService.createNew(content);
+  dispatch({
+    type: 'NEW_APPOINTMENT',
+    data: newAppoitment,
+  });
+};
 
-// export const updateStatus = (appointment) => async (dispatch) => {
-//   const updatedAppointment = await appointmentService.update({ ...appointment, status: true });
-//   dispatch({
-//     type: 'STATUS',
-//     data: updatedAppointment,
-//   });
-// };
+export const updateStatus = (appointment) => async (dispatch) => {
+  const updatedAppointment = await appointmentService.update({ ...appointment, status: true });
+  dispatch({
+    type: 'STATUS',
+    data: updatedAppointment,
+  });
+};
 
-// export const deleteAppointment = (id) => async (dispatch) => {
-//   await appointmentService.del(id);
-//   dispatch({
-//     type: 'DELETE_APPOINTMENT',
-//     data: id,
-//   });
-// };
+export const deleteAppointment = (id) => async (dispatch) => {
+  await appointmentService.del(id);
+  dispatch({
+    type: 'DELETE_APPOINTMENT',
+    data: id,
+  });
+};
 
 export default reducer;
