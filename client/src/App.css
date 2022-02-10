@@ -78,7 +78,6 @@
 .section {
   width: 100%;
   min-height: calc(100vh - 80px);
-  overflow: scroll;
 }
 .card {
   display: flex;
@@ -92,12 +91,15 @@
 .cardInfo {
   padding: 1.5rem;
 }
-.homeSpan {
+.home-Span {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 20px;
   line-height: 34px;
+  color: #336cfb;
+  margin: 5px;
 }
 .login {
   width: 100%;

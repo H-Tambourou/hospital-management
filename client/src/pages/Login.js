@@ -10,6 +10,7 @@ const Login = function Login() {
   const username = useRef();
   const password = useRef();
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,10 +24,10 @@ const Login = function Login() {
       password.current.value = '';
       navigate('/');
     } catch (exeption) {
-      // eslint-disable-next-line no-console
-      console.log(exeption);
+      setErrorMessage(exeption.response.data.error);
       setError(true);
       setTimeout(() => {
+        setErrorMessage('');
         setError(false);
       }, 120000);
     }
@@ -39,7 +40,7 @@ const Login = function Login() {
           <img src={img} alt="medical illustration" style={{ width: '80%' }} />
         </div>
         <div className="title">Log in</div>
-        {error ? <div style={{ color: 'red' }}>Invalid username or password</div> : ''}
+        {error ? <div style={{ color: 'red' }}>{errorMessage}</div> : ''}
         <form onSubmit={handleLogin}>
           <div className="formField">
             <input name="username" placeholder="username" ref={username} required />

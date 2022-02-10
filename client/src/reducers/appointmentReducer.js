@@ -21,7 +21,7 @@ const reducer = (state = [], action = {}) => {
       );
     }
     case 'DELETE_APPOINTMENT': {
-      const { id } = action.data;
+      const id = action.data;
       return state.filter((appointment) => appointment.id !== id);
     }
     default:

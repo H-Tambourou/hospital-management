@@ -10,6 +10,7 @@ const Signup = function Signup() {
   const password = useRef();
   const name = useRef();
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -26,10 +27,12 @@ const Signup = function Signup() {
       password.current.value = '';
       navigate('/login');
     } catch (exeption) {
-      // eslint-disable-next-line no-console
-      console.log(exeption);
+      if (exeption) {
+        setErrorMessage('Username already exists, log in');
+      }
       setError(true);
       setTimeout(() => {
+        setErrorMessage('');
         setError(false);
       }, 120000);
     }
@@ -39,7 +42,7 @@ const Signup = function Signup() {
     <div className="signUp">
       <div className="signUpWrapper">
         <div className="title">Sign Up</div>
-        {error ? <div style={{ color: 'red' }}>Username already chosen</div> : ''}
+        {error ? <div style={{ color: 'red' }}>{errorMessage}</div> : ''}
         <form onSubmit={handleSignUp}>
           <div className="formField">
             <input name="username" placeholder="username" ref={username} required />

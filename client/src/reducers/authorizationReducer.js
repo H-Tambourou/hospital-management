@@ -14,13 +14,6 @@ const reducer = (state = initialState, action = {}) => {
         currentUser: action.payload,
       };
     }
-    case 'RETRIEVE_AUTHENTICATION': {
-      return {
-        ...state,
-        loggedIn: true,
-        currentUser: action.payload,
-      };
-    }
     case 'NOT_AUTHENTICATED': {
       return {
         ...state,

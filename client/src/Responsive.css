@@ -20,4 +20,38 @@
     padding: 5px;
     font-size: initial;
   }
+  .logo img {
+    width: 300px !important;
+    height: auto;
+    object-fit: cover;
+  }
+  .home-Top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+  }
+  .card {
+    width: 40%;
+  }
+  .home-Illustration {
+    width: 600px !important;
+    height: auto;
+    object-fit: cover;
+  }
+  .home-Span {
+    font-size: calc(1.5em + 1vh);
+    line-height: normal;
+  }
+  .appointment-Illustration {
+    width: 500px !important;
+    height: auto;
+    object-fit: cover;
+  }
+  .checking-Illustration {
+    width: 500px !important;
+    height: auto;
+    object-fit: cover;
+  }
 }

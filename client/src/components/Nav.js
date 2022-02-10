@@ -58,9 +58,9 @@ const Nav = function Nav() {
               setToggle(!toggle);
             }}
             style={({ isActive }) => ({ color: isActive ? '#336CFB' : '' })}
-            to="checkings"
+            to="appointments"
           >
-            Checked in
+            Appointments
           </NavLink>
           <NavLink
             className="link"
@@ -71,9 +71,9 @@ const Nav = function Nav() {
               setToggle(!toggle);
             }}
             style={({ isActive }) => ({ color: isActive ? '#336CFB' : '' })}
-            to="appointments"
+            to="checkings"
           >
-            Appointments
+            Checked in
           </NavLink>
           <div
             className="link"

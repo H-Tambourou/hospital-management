@@ -12,6 +12,7 @@ const Form = function Form({ setHideForm, hideForm }) {
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [date, setDate] = useState('');
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,15 +23,17 @@ const Form = function Form({ setHideForm, hideForm }) {
       number,
       date,
     };
-    console.log(newAppointment);
     try {
       await dispatch(createAppointment(newAppointment));
       setName('');
       setEmail('');
       setNumber('');
       setDate('');
+      setHideForm(!hideForm);
     } catch (execption) {
-      console.log(execption);
+      if (execption) {
+        setError(true);
+      }
     }
   };
   const handleCancel = () => {
@@ -48,6 +51,7 @@ const Form = function Form({ setHideForm, hideForm }) {
       onSubmit={handleSubmit}
     >
       <Typography variant="h5">Make an appointment </Typography>
+      {error ? <p style={{ color: 'red' }}>Error submitting form</p> : ''}
       <div style={{ margin: '5px' }}>
         <TextField
           value={name}
