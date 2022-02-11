@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const baseUrl1 = '/api/login';
-const baseUrl2 = '/api/users';
+const baseUrl1 = 'https://ht-hospital-app.herokuapp.com/api/login';
+const baseUrl2 = 'https://ht-hospital-app.herokuapp.com/api/users';
 
 const login = async (credentials) => {
   const response = await axios.post(baseUrl1, credentials);

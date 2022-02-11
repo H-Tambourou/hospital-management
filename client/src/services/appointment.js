@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = '/api/appointments';
+const baseUrl = 'https://ht-hospital-app.herokuapp.com/api/appointments';
 
 let token = null;
 

@@ -3,6 +3,7 @@
 A full-stack application for a hospital to help manage patients efficiently. Giving users the ability to make appointments for patients, check patients in and delete appointments. Securely authenticates users.
 
 - Created using the MERN stack.
+- for testing {username: test1, password: Vrai1}
 
 ![View 1](client/public/view1.png)
 
